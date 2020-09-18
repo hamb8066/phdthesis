@@ -1,8 +1,6 @@
-## Welcome to GitHub Pages
+## خوشامدگویی
 
-You can use the [editor on GitHub](https://github.com/hamb8066/phdthesis/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+ در این بخش کد و برنامه های کامپیوتری رساله دکتری قرار گرفته است.
 
 ### Markdown
 
