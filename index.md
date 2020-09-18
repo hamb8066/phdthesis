@@ -10,7 +10,7 @@
 
  <p dir='rtl' align='right'>کد های فصل های سه و چهار پس از چاپ مقالات مستخرج، در این وبگاه قرار خواهند گرفت.</p>
 
-
+For more Info. see this [link.](https://hamb8066.github.io/homepage/)
 
 
 ### <p dir='rtl' align='right'>فصل دوم - جدول 2.2 </p>
