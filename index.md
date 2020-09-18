@@ -10,6 +10,265 @@
 
 ### <p dir='rtl' align='right'>فصل دوم</p>
 
+```markdown
+<p dir='rtl' align='right'>جدول 2.2</p>
+
+##############################
+######Table 2.2 R-codes#######
+##############################
+
+####################
+###Spearman's Rho###
+####################
+a=0
+######################Distortion functions#########################
+r=-30
+ginv=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+g=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+######################Copulas#########################
+alpha=0.1
+basecop=function(u,v){
+min((u^alpha)*v,(v^alpha)*u)
+}
+distcop=function(u,v){
+ginv(basecop(g(u),g(v)))
+}
+#########################Spearman rho##################
+#install.packages("R2Cuba", repos="http://cran.um.ac.ir")
+#require(R2Cuba)
+integrand <- function(arg) {
+u <- arg[1]
+v <- arg[2]
+ff <-ginv(min(((g(u))^alpha) * g(v),((g(v))^alpha) * g(u))) 
+return(ff)
+}
+NCOMP <- 1
+#sink("aaa")
+a=cuhre(2, NCOMP,  integrand,lower=c(0,0),upper=c(1,1))$value
+#sink()
+12*a-3
+
+##########################LOOP##########################
+pp=seq(0.1,0.9,0.1)
+kk=c(0.01,0.8,1,10,100,400,700)
+#seq(-37,-1,1)
+a=matrix(0,length(pp),length(kk))
+#install.packages("R2Cuba", repos="http://cran.um.ac.ir")
+#require(R2Cuba)
+for(j in 1:length(kk)){
+ginv=function(t){
+(exp((kk[j])*t)-1)/(exp(kk[j])-1)
+}
+g=function(t){
+log(((exp(kk[j])-1)*t+1)^(1/(kk[j])))
+}
+for(i in 1:length(pp)){
+
+integrand <- function(arg) {
+u <- arg[1]
+v <- arg[2]
+ff <-ginv(min(((g(u))^pp[i]) * g(v),((g(v))^pp[i]) * g(u))) 
+return(ff)
+}
+NCOMP <- 1
+#sink("aaa")
+a[i,j]=cuhre(2, NCOMP,  integrand,lower=c(0,0),upper=c(1,1))$value
+#sink()
+#12*a[i,j]-3
+}
+}
+data=12*a-3
+#######################LABEL###########################
+rownames(data)=c("0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9")
+colnames(data)=c("0.01","0.8","1","10","100","400","700")
+data
+######################function###########################
+
+spear=function(r,alpha){
+a=0
+ginv=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+g=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+integrand <- function(arg) {
+u <- arg[1]
+v <- arg[2]
+ff <-ginv(min(((g(u))^alpha) * g(v),((g(v))^alpha) * g(u))) 
+return(ff)
+}
+NCOMP <- 1
+#sink("aaa")
+a=cuhre(2, NCOMP,  integrand,lower=c(0,0),upper=c(1,1))$value
+#sink()
+12*a-3
+}
+
+
+#########################
+####Bloomqvist's beta####
+#########################
+
+######################Distortion functions#########################
+r=10
+alpha=0.9
+ginv=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+g=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+#####################Gini's Gamma##################
+integrand=function(x) 4*(ginv(min(((g(x))^alpha) * g(1-x),((g(1-x))^alpha) * g(x)))-x+ginv(min(((g(x))^alpha) * g(x),((g(x))^alpha) * g(x))))
+integrate(Vectorize(integrand), lower = 0, upper = 1)[[1]]
+#####################################################
+
+
+######################function########################
+gini=function(alpha,r){
+ginv=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+g=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+integrand=function(x) 4*(ginv(min(((g(x))^alpha) * g(1-x),((g(1-x))^alpha) * g(x)))-x+ginv(min(((g(x))^alpha) * g(x),((g(x))^alpha) * g(x))))
+integrate(Vectorize(integrand), lower = 0, upper = 1)[[1]]
+}
+######################################################
+
+
+##########################LOOP##########################
+pp=seq(0.1,0.9,0.1)
+kk=c(0.01,0.8,1,10,100,400,700)
+a=matrix(0,length(pp),length(kk))
+for(j in 1:length(kk)){
+ginv=function(t){
+(exp((kk[j])*t)-1)/(exp(kk[j])-1)
+}
+g=function(t){
+log(((exp(kk[j])-1)*t+1)^(1/(kk[j])))
+}
+for(i in 1:length(pp)){
+integrand=function(x) 4*(ginv(min(((g(x))^pp[i]) * g(1-x),((g(1-x))^pp[i]) * g(x)))-x+ginv(min(((g(x))^pp[i]) * g(x),((g(x))^pp[i]) * g(x))))
+a[i,j]=integrate(Vectorize(integrand), lower = 0, upper = 1)[[1]]
+}
+}
+a
+#######################LABEL###########################
+rownames(a)=c("0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9")
+colnames(a)=c("0.01","0.8","1","10","100","400","700")
+a
+
+####################
+####Gini's gamma####
+####################
+######################Distortion functions#########################
+r=10
+alpha=0.05
+ginv=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+g=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+#####################Bloomqvist's beta##################
+delta=function(x) ginv(min(((g(x))^alpha) * g(x),((g(x))^alpha) * g(x)))
+4*delta(0.5)-1
+#####################################################
+
+
+######################function########################
+bbloom=function(alpha,r){
+ginv=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+g=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+delta=function(x) ginv(min(((g(x))^alpha) * g(x),((g(x))^alpha) * g(x)))
+4*delta(0.5)-1
+}
+######################################################
+
+
+##########################LOOP##########################
+pp=seq(0.1,0.9,0.1)
+kk=c(0.01,0.8,1,10,100,400,700)
+b=matrix(0,length(pp),length(kk))
+for(j in 1:length(kk)){
+ginv=function(t){
+(exp((kk[j])*t)-1)/(exp(kk[j])-1)
+}
+g=function(t){
+log(((exp(kk[j])-1)*t+1)^(1/(kk[j])))
+}
+for(i in 1:length(pp)){
+delta=function(x) ginv(min(((g(x))^pp[i]) * g(x),((g(x))^pp[i]) * g(x)))
+b[i,j]=4*delta(0.5)-1
+}
+}
+b
+#######################LABEL###########################
+rownames(b)=c("0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9")
+colnames(b)=c("0.01","0.8","1","10","100","400","700")
+b
+
+#########################
+######Kendall's Tau######
+#########################
+
+rm(list=ls())
+####################Distortion functions#########################
+a=0.99
+r=100
+g=function(t){
+(exp(r*t)-1)/(exp(r)-1)
+}
+ginv=function(t){
+log(((exp(r)-1)*t+1)^(1/r))
+}
+gdiff=function(t){
+(r*exp(r*t))/(exp(r)-1)
+}
+################int.1###################
+h1=function(v,w) {
+(a*g(v*w)*((g(v))^(2*a-1))*gdiff(v*w)*gdiff(v)*v)/((gdiff(ginv(g(v*w)*((g(v))^(a)))))^2)
+}
+integrand1 <- function(arg) {
+w <- arg[1]
+v <- arg[2]
+ff <-h1(v,w) 
+return(ff)
+}
+NCOMP <- 1
+#sink("aaa")
+a1=cuhre(2, NCOMP,  integrand1,lower=c(0,0),upper=c(1,1))$value
+#sink("bbb")
+################int.2###################
+h2=function(v,w){
+(a*((g(w*(1-v)+v))^(2*a-1))*g(v)*gdiff(w*(1-v)+v)*gdiff(v)*(1-v))/((gdiff(ginv(g(w*(1-v)+v)*((g(v))^(a)))))*(gdiff(ginv(((g(w*(1-v)+v))^(a))*g(v)))))
+}
+integrand2 <- function(arg) {
+w <- arg[1]
+v <- arg[2]
+ff <-h2(v,w) 
+return(ff)
+}
+NCOMP <- 1
+#sink("aaa")
+a2=cuhre(2, NCOMP,  integrand2,lower=c(0,0),upper=c(1,1))$value
+#sink("bbb")
+#####################final touch#################
+1-4*(a1+a2)
+```
+
+
 
 ### <p dir='rtl' align='right'>فصل سوم</p>
 
@@ -17,7 +276,6 @@
 ### <p dir='rtl' align='right'>فصل چهارم</p>
 
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
 
 ```markdown
 Syntax highlighted code block
