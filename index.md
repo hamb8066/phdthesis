@@ -722,43 +722,117 @@ y<-c(0, 0, 0, 1, 1, 2, 2, 2, 2, 3, 4, 4, 5, 14, 25)
 plot(x,y,col="red")
 ```
 
-
-
-
-
-
-
-### <p dir='rtl' align='right'>فصل سوم</p>
-
-
-### <p dir='rtl' align='right'>فصل چهارم</p>
-
-
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.2 </p>
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+NA
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.3 </p>
 
-### Jekyll Themes
+```markdown
+NA
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/hamb8066/phdthesis/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.4 </p>
 
-### Support or Contact
+```markdown
+NA
+```
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.5 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.6 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.7 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.8 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - شکل 3.9 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - جدول 3.1 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - جدول 3.2 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل سوم - جدول 3.3 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.1 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.2 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.3 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.4 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.5 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.6 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - شکل 4.7 </p>
+
+```markdown
+NA
+```
+
+### <p dir='rtl' align='right'>فصل چهارم - جدول 4.1 </p>
+
+```markdown
+NA
+```
+
