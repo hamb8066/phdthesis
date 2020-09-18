@@ -8,10 +8,9 @@
 
 
 
-### <p dir='rtl' align='right'>فصل دوم</p>
+### <p dir='rtl' align='right'>فصل دوم - جدول 2.2 </p>
 
 ```markdown
-<p dir='rtl' align='right'>جدول 2.2</p>
 
 ##############################
 ######Table 2.2 R-codes#######
@@ -267,6 +266,32 @@ a2=cuhre(2, NCOMP,  integrand2,lower=c(0,0),upper=c(1,1))$value
 #####################final touch#################
 1-4*(a1+a2)
 ```
+
+### <p dir='rtl' align='right'>فصل دوم - جدول 2.3 </p>
+
+```markdown
+#p.180 book: Exponential Distribution_ Theory, Methods and Applications by 
+x<-c(0.27,0.4,0.69,0.79,2.75,3.91,9.88,13.95,15.93,27.80,53.24,82.85,89.29,100.58,215.10)
+y<-c(0.35,0.59,0.96,0.99,1.69,1.97,2.07,2.58,2.71,2.9,3.67,3.99,5.35,13.77,25.50)
+x<-c(0, 0, 0, 0, 2, 3, 10, 14, 16, 28, 53, 83, 89, 100, 215)
+y<-c(0, 0, 0, 1, 1, 2, 2, 2, 2, 3, 4, 4, 5, 14, 25)
+sum(round(x,0)==round(y,0))
+length(x)
+length(y)
+summary(x)
+summary(y)
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
